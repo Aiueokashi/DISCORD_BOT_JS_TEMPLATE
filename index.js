@@ -2,7 +2,7 @@ require('dotenv').config();
 const { DISCORD_BOT_TOKEN, PREFIX, OWNERS } = process.env;                            //.envファイルからトークン、プレフィックス、オーナーIDをとってくる
 const Client = require('./structures/Client');                                        //discordのクライアント
 const client = new Client({                                                           //クライアントの設定
-	prefix: PREFIX.split('||'),                                                   //prefixをとってくる 例→　#||!||?  と書けば#と!と？が使える
+	prefix: PREFIX.split('\\'),                                                   //prefixをとってくる 例→　#\\!\\?  と書けば#と!と？が使える
 	ownerID: OWNERS.split(','),                                                   //ownerIDをとってくる  例→  12345667887,123435453342
 	disableEveryone: true                                                         //botが@everyoneを使えないようにする
 });
