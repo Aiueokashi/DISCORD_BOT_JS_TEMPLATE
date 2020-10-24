@@ -6,6 +6,7 @@ const client = new Client({                                                     
 	ownerID: OWNERS.split(','),                                                   //ownerIDをとってくる  例→  12345667887,123435453342
 	disableEveryone: true                                                         //botが@everyoneを使えないようにする
 });
+//const activities = require('./assets/json/activity');					//プレイ中の表示を変える場合、それを読み込む
 const codeblock = /```(?:(\S+)\n)?\s*([^]+?)\s*```/i;                                  //コードブロックの書式読み込み
 const { stripIndents } = require('common-tags');
 const runLint = message => {                                                           //コマンドを使用するための設定
@@ -22,6 +23,19 @@ const runLint = message => {                                                    
 };
 
 client.setup();//setup
+
+client.on('ready', () => {								//ログインしたときのイベント
+	console.log(` Logged in ${client.user.tag} ID: ${client.user.id}`);
+	/*client.setInterval(() => {							//プレイ中の表示を変えたい場合これを使う
+		const activity = activities[Math.floor(Math.random() * activities.length)];
+		client.user.setActivity(activity.text, { type: activity.type });
+	}, 15000);*/
+});
+
+client.on('disconnect', event => {
+	client.logger.error(`[DISCONNECT] Disconnected with code ${event.code}.`);
+	process.exit(0);
+});
 
 client.on('message', message => runLint(message));                                       //メッセージを受信したときにrunLint(さっきのあれ(語彙力))をじっこうする
 
