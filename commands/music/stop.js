@@ -1,4 +1,4 @@
-const { canModifyQueue } = require("../util/MusicUtils");
+const { canModifyQueue } = require(".../util/MusicUtils");
 
 
 module.exports = class StopCommand extends Command{
