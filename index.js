@@ -33,7 +33,7 @@ client.on('ready', () => {								//ログインしたときのイベント
 });
 
 client.on('disconnect', event => {
-	client.logger.error(`[DISCONNECT] Disconnected with code ${event.code}.`);
+	console.log(`[DISCONNECT] Disconnected with code ${event.code}.`);
 	process.exit(0);
 });
 
@@ -41,12 +41,12 @@ client.on('message', message => runLint(message));                              
 
 client.on('messageUpdate', (oldMessage, message) => runLint(message));　                  //メッセージが編集されたときに(上に同じ)
 
-client.on('error', err => client.logger.error(err));                                       //エラーが起きた時
+client.on('error', err => console.log(err));                                       //エラーが起きた時
 
-client.on('warn', warn => client.logger.warn(warn));                                       //警告
+client.on('warn', warn => console.log(warn));                                       //警告
 
-client.commandHandler.on('error', (err, message, command) => {                             //コマンドの実行中にエラーが発生したときにそのチャンネルにエラー内容を送信する
-	client.logger.error(`[COMMAND${command ? `:${command.name}` : ''}]\n${err.stack}`);
+client.commandHandler.on('error', (err, message, command) => {                             //コマンドの実行中に予期しないエラーが発生したときにそのチャンネルにエラー内容を送信する
+	console.log(`[COMMAND${command ? `:${command.name}` : ''}]\n${err.stack}`);
 	message.reply(stripIndents`
 		コマンドを実行中にエラーが発生しました: \`${err.message}\`コマンドを終了します`).catch(() => null);
 });
