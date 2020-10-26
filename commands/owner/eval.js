@@ -31,7 +31,7 @@ async exec(message) {
 				embed: {
 					color: 0x00ae86,
 					title: ':warning:error',
-					description: 'code:```' + code + '```error:```' + error + '```'
+					description: 'code:```javascript\n' + code + '```error:```' + error + '```'
 				}
 			});
 			message.react('❎');
