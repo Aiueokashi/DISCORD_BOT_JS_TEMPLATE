@@ -1,7 +1,7 @@
 const { MessageEmbed } = require("discord.js");
 const lyricsFinder = require("lyrics-finder");
 
-module.exports = class PlayCommand extends Command {
+module.exports = class LyricsCommand extends Command {
 	constructor() {
 		super('lyrics', {
 			aliases: ['lyrics', 'ly'],
