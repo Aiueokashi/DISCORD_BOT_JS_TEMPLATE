@@ -1,12 +1,16 @@
 require('dotenv').config();
-const { DISCORD_BOT_TOKEN, PREFIX, OWNERS } = process.env;                            //.envファイルからトークン、プレフィックス、オーナーIDをとってくる
+const { DISCORD_BOT_TOKEN, OWNERS } = process.env;                            //.envファイルからトークン、プレフィックス、オーナーIDをとってくる
 const Client = require('./structures/Client');                                        //discordのクライアント
+//const activities = require('./assets/json/activity');					//プレイ中の表示を変える場合、それを読み込む
+const fs = require('fs');								//fsというyaml書き込みのためのパッケージ
+const db = require('quick.db');								//replでも動くデーターベースのパッケージ
+const yaml = require("js-yaml");							//.yamlファイルを使えるようにする(デフォルト値設定のため)
+const { mainprefix } = yaml.load(fs.readFileSync("./config.yml"));			//デフォルトのprefixを指定
 const client = new Client({                                                           //クライアントの設定
-	prefix: PREFIX.split('\\'),                                                   //prefixをとってくる 例→　#\\!\\?  と書けば#と!と？が使える
+	prefix: mainprefix,
 	ownerID: OWNERS.split(','),                                                   //ownerIDをとってくる  例→  12345667887,123435453342
 	disableEveryone: true                                                         //botが@everyoneを使えないようにする
 });
-//const activities = require('./assets/json/activity');					//プレイ中の表示を変える場合、それを読み込む
 const codeblock = /```(?:(\S+)\n)?\s*([^]+?)\s*```/i;                                  //コードブロックの書式読み込み
 const { stripIndents } = require('common-tags');
 const runLint = message => {                                                           //コマンドを使用するための設定
@@ -30,7 +34,21 @@ client.on('ready', () => {								//ログインしたときのイベント
 		const activity = activities[Math.floor(Math.random() * activities.length)];
 		client.user.setActivity(activity.text, { type: activity.type });
 	}, 15000);*/
+	 client.guilds.cache.forEach(guild => {						//guild内でオフラインの間に作られた招待リンクを検知する
+		 guild
+			 .fetchInvites()
+			 .then(invites => guildInvites.set(guild.id, invites))		//invitesをセット
+			 .catch(err => console.log(err));
+	 });
 });
+
+client.on("inviteCreate", async invite =>						//guild内で招待リンクが作られた際にそれを検知するイベント
+	  guildInvites.set(invite.guild.id, await invite.guild.fetchInvites())
+);
+
+const { defaultjoinmessage, defaultleavemessage } = yaml.load(				//yamlファイルからデフォルトのメッセージを取ってくる
+	fs.readFileSync("./config.yml")
+);
 
 client.on('disconnect', event => {
 	console.log(`[DISCONNECT] Disconnected with code ${event.code}.`);
