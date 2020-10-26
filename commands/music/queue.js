@@ -1,6 +1,6 @@
 const { MessageEmbed, splitMessage, escapeMarkdown } = require("discord.js");
 
-module.exports = class PlayCommand extends Command {
+module.exports = class QueueCommand extends Command {
 	constructor() {
 		super('queue', {
 			aliases: ['queue', 'q'],
