@@ -10,4 +10,21 @@ repl.itで動かすように書いてます.<br>
 .<br>
 日本語版InviteManager作るか...
 <br><br>
-## 今ある機能↓
+# 機能↓
+1:音楽再生<br>
+2:InviteTracker/Manager(制作中)
+<br><br>
+
+# コマンドとか使い方とか
+
+.envファイルとconfig.yamlの中に書いてある項目を埋めれば使えます。<br><br>
+.envに必要なもの:<br>
+①DiscordのBotToken<br>
+②YoutubeのAPI Key<br><br>
+config.yamlに書くもの:<br>
+①デフォルトのprefix(コマンドでサーバーごとに変更可能)<br>
+②デフォルトのwelcome/leaveメッセージ(コマンドでサーバーごとに変更、オンオフ可能)<br>
+いじょー<br><br>
+
+# 不具合とかどうたらこうたら↓
+ちょっと待っててね
