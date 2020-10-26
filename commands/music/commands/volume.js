@@ -1,10 +1,14 @@
-const { canModifyQueue } = require("../util/EvobotUtil");
+const { canModifyQueue } = require("../util/MusicUtills");
 
-module.exports = {
-  name: "volume",
-  aliases: ["v"],
-  description: "Change volume of currently playing music",
-  execute(message, args) {
+module.exports = class VolumeCommand extends Command {
+	constructor() {
+		super('volume', {
+			aliases: ['volume', 'v'],
+			category: 'music',
+			description: 'switch volume'
+		});
+	}
+  exec(message, args) {
     const queue = message.client.queue.get(message.guild.id);
 
     if (!queue) return message.reply("何も再生してないよ").catch(console.error);
