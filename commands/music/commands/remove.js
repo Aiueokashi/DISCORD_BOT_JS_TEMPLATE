@@ -1,9 +1,14 @@
-const { canModifyQueue } = require("../util/EvobotUtil");
+const { canModifyQueue } = require("../util/MusicUtils");
 
-module.exports = {
-  name: "remove",
-  description: "Remove song from the queue",
-  execute(message, args) {
+module.exports = class RemoveCommand extends Command {
+	constructor() {
+		super('remove', {
+			aliases: ['remove'],
+			category: 'music',
+			description: 'remove music from queue'
+		});
+	}
+  exec(message, args) {
     const queue = message.client.queue.get(message.guild.id);
     if (!queue) return message.channel.send("キューがありません").catch(console.error);
     if (!canModifyQueue(message.member)) return;
