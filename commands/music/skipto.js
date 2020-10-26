@@ -1,10 +1,14 @@
-const { canModifyQueue } = require("../util/EvobotUtil");
+const { canModifyQueue } = require("../util/MusicUtils");
 
-module.exports = {
-  name: "skipto",
-  aliases: ["st"],
-  description: "Skip to the selected queue number",
-  execute(message, args) {
+module.exports = class PlayCommand extends Command {
+	constructor() {
+		super('skipto', {
+			aliases: ['skipto', 'st'],
+			category: 'music',
+			description: 'skip to number of queue'
+		});
+	}
+  exec(message, args) {
     if (!args.length)
       return message
         .reply(`コマンド: ${message.client.prefix}${module.exports.name} <Queue Number>`)
