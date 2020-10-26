@@ -1,10 +1,14 @@
 const { MessageEmbed, splitMessage, escapeMarkdown } = require("discord.js");
 
-module.exports = {
-  name: "queue",
-  aliases: ["q"],
-  description: "Show the music queue and now playing.",
-  execute(message) {
+module.exports = class PlayCommand extends Command {
+	constructor() {
+		super('queue', {
+			aliases: ['queue', 'q'],
+			category: 'music',
+			description: 'show queue'
+		});
+	}
+  exec(message) {
     const queue = message.client.queue.get(message.guild.id);
     if (!queue) return message.reply("何もプレイしていないよ").catch(console.error);
 
