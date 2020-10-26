@@ -1,6 +1,7 @@
 const { Command } = require('discord-akairo');
 const { inspect } = require('util');
 const { stripIndents } = require('common-tags');
+const discord = reqire('discord.js');
 const path = require('path');
 client = new discord.Client()
 module.exports = class EvalCommand extends Command {
