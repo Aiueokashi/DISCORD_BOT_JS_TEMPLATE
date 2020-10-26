@@ -43,7 +43,4 @@ config.yamlに書くもの:<br>
 # 不具合とかどうたらこうたら↓
 ちょっと待っててね..<br>あ、そうそう、作りかけのコードが挟まってることが多いので注意！
 
-|run on repl.it|_
 
-.. |run on repl.it| image:: https://repl.it/badge/github/username/replname
-.. _run on repl.it: https://repl.it/github/username/replname
