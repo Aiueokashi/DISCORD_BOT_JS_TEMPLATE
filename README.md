@@ -1,4 +1,6 @@
 [replit]:https://repl.it<br>
+[djs]:https://discord.js.org/#/<br>
+[akairo]:https://discord-akairo.github.io/#/
 [![Run on Repl.it](https://repl.it/badge/github/MrAugu/simple-discordjs-dashboard)](https://repl.it/github/MrAugu/simple-discordjs-dashboard)
 ![MyBadge](https://img.shields.io/badge/まだ-制作途中-orange)
 # DISCORD_BOT_JS_TEMPLATE:warning:制作途中！！！
@@ -37,8 +39,9 @@ config.yamlに書くもの:<br>
 指定した`prefix`をコマンドの前につけるか、botをメンションした後にコマンドを打つとbotが反応します。<br>
 間違えてスペルミスなどをした場合は、編集して正しいコマンドに直せば実行されます。<br>
 表には引数をわかりやすくするため、「<>」がついていますが、実際に使用する時は外してください
-| コマンド | 説明 | 短縮コマンド |
+| 誰でも使えるコマンド | 説明 | 短縮コマンド |
 | --- | --- | --- |
+|ping|典型的なあれ(ping値を測定)かかった時間に応じて'pong'の'o'の数が増える|pong,ping-pong|
 | play <曲の名前\|URL> | 再生 | p | 
 | playlist <プレイリストの名前\|プレイリストのURL> | プレイリストの再生 | pl |
 | pause | 一時停止　| pa |
@@ -56,6 +59,12 @@ config.yamlに書くもの:<br>
 |remove <value>|指定したキューの番号の曲をキューから外す|なし|
 |resume|pauseで止めた再生を再開|r|
 |他にもあるんだけど|ちょっと今日はここまで|...|
+  
+|botオーナー用コマンド|説明|短縮|
+|---|---|---|
+|evaluate <code>|codeの中身が実際に実行される。:warning:サーバーやプログラムに変更が加えられる:warning:(動くのは[Discord.js][djs]と[discord-akairo][akairo]書式のみ)|eval|
+|execute <code>|codeの中身を実行する(evalとは違って結果が文字、数値として返ってくるだけ)|exec|
+  
   
 ### READMEって書くのめんどくさいね...
 
