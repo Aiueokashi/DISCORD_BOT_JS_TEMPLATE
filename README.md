@@ -1,4 +1,5 @@
-[replit]:https://repl.it
+[replit]:https://repl.it<br>
+[![Run on Repl.it](https://repl.it/badge/github/MrAugu/simple-discordjs-dashboard)](https://repl.it/github/MrAugu/simple-discordjs-dashboard)
 # DISCORD_BOT_JS_TEMPLATE:warning:制作途中！！！
 ## [repl.it][replit]で動かすためのコードです！
 discord-akairoでbotを書こうかなと<br>
