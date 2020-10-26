@@ -41,29 +41,29 @@ config.yamlに書くもの:<br>
 表には引数をわかりやすくするため、「<>」がついていますが、実際に使用する時は外してください
 | 誰でも使えるコマンド | 説明 | 短縮コマンド |
 | --- | --- | --- |
-|ping|典型的なあれ(ping値を測定)かかった時間に応じて'pong'の'o'の数が増える|pong,ping-pong|
-| play <曲の名前\|URL> | 再生 | p | 
+|ping|典型的なあれ(ping値を測定)かかった時間に応じて'pong'の'o'の数が増える|pong,<br>ping-pong|
+| play \<曲の名前\|URL> | 再生 | p | 
 | playlist <プレイリストの名前\|プレイリストのURL> | プレイリストの再生 | pl |
 | pause | 一時停止　| pa |
 | pruning <true\|false>| 再生が終わったら、botのメッセージを順次削除　| pr |
 | stop | 曲の再生を停止し、キューから全ての曲を削除|　なし　|
 | skip | 再生中の曲をスキップ | s |
-| skipto <value>| キューの番号を指定して、その曲までスキップ| st |
-| search <検索ワード>| youtube検索をかける(10個まで表示されて、番号を選択すると再生)|なし|
+| skipto \<value>| キューの番号を指定して、その曲までスキップ| st |
+| search \<検索ワード>| youtube検索をかける(10個まで表示されて、番号を選択すると再生)|なし|
 | shuffle | キューをシャッフル| なし|
-| volume <value>| 指定した数値に音量を変える|v|
+| volume \<value>| 指定した数値に音量を変える|v|
 |loop|再生中の曲をループ|l|
 |lyrics|再生中の曲の歌詞を検索|ly|
 |queue|キューを表示|q|
 |nowplaying|再生中の曲の詳細を表示|np|
-|remove <value>|指定したキューの番号の曲をキューから外す|なし|
+|remove \<value>|指定したキューの番号の曲をキューから外す|なし|
 |resume|pauseで止めた再生を再開|r|
 |他にもあるんだけど|ちょっと今日はここまで|...|
   
 |botオーナー用コマンド|説明|短縮|
 |---|---|---|
-|evaluate <code>|codeの中身が実際に実行される。:warning:サーバーやプログラムに変更が加えられる:warning:(動くのは[Discord.js][djs]と[discord-akairo][akairo]書式のみ)|eval|
-|execute <code>|codeの中身を実行する(evalとは違って結果が文字、数値として返ってくるだけ)|exec|
+|evaluate \<code>|codeの中身が実際に実行される。:warning:サーバーやプログラムに変更が加えられる:warning:(動くのは[Discord.js][djs]と[discord-akairo][akairo]書式のみ)|eval|
+|execute \<code>|codeの中身を実行する(evalとは違って結果が文字、数値として返ってくるだけ)|exec|
   
   
 ### READMEって書くのめんどくさいね...
