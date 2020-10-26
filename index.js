@@ -7,7 +7,7 @@ const db = require('quick.db');								//replでも動くデーターベース�
 const yaml = require("js-yaml");							//.yamlファイルを使えるようにする(デフォルト値設定のため)
 const { mainprefix } = yaml.load(fs.readFileSync("./config.yml"));			//デフォルトのprefixを指定
 const client = new Client({                                                           //クライアントの設定
-	prefix: mainprefix,
+	prefix: mainprefix,db.get(`guildprefix_${message.guild.id}`),
 	ownerID: OWNERS.split(','),                                                   //ownerIDをとってくる  例→  12345667887,123435453342
 	disableEveryone: true                                                         //botが@everyoneを使えないようにする
 });
@@ -49,6 +49,87 @@ client.on("inviteCreate", async invite =>						//guild内で招待リンクが�
 const { defaultjoinmessage, defaultleavemessage } = yaml.load(				//yamlファイルからデフォルトのメッセージを取ってくる
 	fs.readFileSync("./config.yml")
 );
+
+client.on("guildMemberAdd", async member => {						//guildに新しいmemberが入ったときの処理
+  let joinchannelmessage = db.get(`joinchannelmessage_${member.guild.id}`);
+  if (!joinchannelmessage === null) {
+    return console.log(`None`);
+  }
+  let joinmessage = db.get(`joinchannelmessage_${member.guild.id}`);
+  if (joinmessage === null) joinmessage = defaultjoinmessage;
+
+  const catchedInvites = guildInvites.get(member.guild.id);
+  const newInvites = await member.guild.fetchInvites();
+  guildInvites.set(member.guild.id, newInvites);
+  try {
+    const usedInvite = newInvites.find(
+      inv => catchedInvites.get(inv.code).uses < inv.uses
+    );
+    db.add(`invites_${member.guild.id}_${usedInvite.inviter.id}`, 1);
+    db.set(`inviter_${member.id}`, usedInvite.inviter.id);
+    let inv = db.fetch(`invites_${member.guild.id}_${usedInvite.inviter.id}`);
+    let joinmessage2 = defaultjoinmessage
+      .toLowerCase()
+      .replace("{user}", member.user.tag)
+      .replace("{user}", member.user.tag)
+      .replace("{user}", member.user.tag)
+      .replace("{user}", member.user.tag)
+      .replace("{user}", member.user.tag)
+      .replace("{user}", member.user.tag)
+      .replace("{user}", member.user.tag)
+      .replace("{inviter}", usedInvite.inviter.tag)
+      .replace("{inviter}", usedInvite.inviter.tag)
+      .replace("{inviter}", usedInvite.inviter.tag)
+      .replace("{inviter}", usedInvite.inviter.tag)
+      .replace("{inv}", inv)
+      .replace("{inv}", inv)
+      .replace("{inv}", inv)
+      .replace("{inv}", inv)
+      .replace("{inv}", inv)
+      .replace("{inv}", inv);
+
+
+    db.add(`jointimes_${member.guild.id}_${member.id}`, 1);
+    db.add(`Regular_${member.guild.id}_${usedInvite.inviter.id}`, 1);
+    client.channels.cache.get(joinchannelmessage).send(joinmessage2);
+  } catch (err) {
+    console.log(err);
+  }
+});
+
+client.on("guildMemberRemove", member => {
+  let leavechannel = db.get(`leavechannelmessage_${member.guild.id}`);
+  if (leavechannel === null) {
+    return console.log(`nope!`);
+  }
+  let leavemssage = db.get(`leavemessage_${member.guild.id}`);
+  if (leavemssage === null) leavemssage = defaultleavemessage;
+
+  let inviter2 = db.fetch(`inviter_${member.id}`);
+  const iv2 = client.users.cache.get(inviter2);
+  const mi = member.guild.members.cache.get(inviter2);
+  db.subtract(`invites_${member.guild.id}_${inviter2}`, 1);
+  if (!inviter2) {
+    client.channels.cache
+      .get(leavechannel)
+      .send(`${member.tag} が退出したけど誰が招待したのか分からなかったよ`);
+    return;
+  }
+  let leavemssage2 = leavemssage
+    .toLowerCase()
+    .replace("{user}", member.user.tag)
+    .replace("{user}", member.user.tag)
+    .replace("{user}", member.user.tag)
+    .replace("{user}", member.user.tag)
+    .replace("{inviter}", `<@${inviter2}>`)
+    .replace("{inviter}", `<@${inviter2}>`)
+    .replace("{inviter}", `<@${inviter2}>`)
+    .replace("{inviter}", `<@${inviter2}>`)
+    .replace("{inviter}", `<@${inviter2}>`);
+
+  db.add(`leaves_${member.guild.id}_${inviter2}`, 1);
+  client.channels.cache.get(leavechannel).send(leavemssage2);
+});
 
 client.on('disconnect', event => {
 	console.log(`[DISCONNECT] Disconnected with code ${event.code}.`);
