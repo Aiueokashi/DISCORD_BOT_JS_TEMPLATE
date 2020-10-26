@@ -1,0 +1,3 @@
+mainprefix: "i!"
+defaultjoinmessage: "**{Inviter}が{user}を招待したよ(招待数:{inv})**"
+defaultleavemessage: "**{user}が抜けたよ。招待者:{Inviter}**"
