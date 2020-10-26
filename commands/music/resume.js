@@ -19,6 +19,6 @@ module.exports = class ResumeCommand extends Command {
       return queue.textChannel.send(`${message.author} ▶ 再開`).catch(console.error);
     }
 
-    return message.reply("とまってないけど..?").catch(console.error);
+    return message.reply("もともと、とまってないけど..?").catch(console.error);
   }
 };
