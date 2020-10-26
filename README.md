@@ -18,6 +18,7 @@ repl.itで動かすように書いてます.<br>
 <br><br>
 # 機能↓
 - [x] MusicPlayer
+- [ ] ReactionMusicPlayer
 - [ ] UtilityCommands
 - [ ] ModerationCommands
 - [ ] InviteTracker/Manager
