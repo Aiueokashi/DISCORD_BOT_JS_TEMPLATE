@@ -1,6 +1,6 @@
 const { canModifyQueue } = require("../util/MusicUtils");
 
-module.exports = class PlayCommand extends Command {
+module.exports = class PauseCommand extends Command {
 	constructor() {
 		super('pause', {
 			aliases: ['pause', 'pa'],
