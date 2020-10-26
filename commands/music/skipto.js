@@ -1,6 +1,6 @@
 const { canModifyQueue } = require("../util/MusicUtils");
 
-module.exports = class PlayCommand extends Command {
+module.exports = class SkipToCommand extends Command {
 	constructor() {
 		super('skipto', {
 			aliases: ['skipto', 'st'],
