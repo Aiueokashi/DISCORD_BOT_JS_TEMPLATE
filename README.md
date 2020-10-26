@@ -11,8 +11,8 @@ repl.itで動かすように書いてます.<br>
 日本語版InviteManager作るか...
 <br><br>
 # 機能↓
-[x]音楽再生<br>
-[ ] InviteTracker/Manager(制作中)
+-[x]音楽再生<br>
+-[ ] InviteTracker/Manager(制作中)
 <br><br>
 
 # コマンドとか使い方とか
