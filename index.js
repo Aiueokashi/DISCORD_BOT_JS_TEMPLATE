@@ -7,8 +7,9 @@ const fs = require('fs');								//fsというyaml書き込みのためのパッ
 const db = require('quick.db');								//replでも動くデーターベースのパッケージ
 const yaml = require("js-yaml");							//.yamlファイルを使えるようにする(デフォルト値設定のため)
 const { mainprefix } = yaml.load(fs.readFileSync("./config.yml"));			//デフォルトのprefixを指定
+const guildprefix = db.get(`guildprefix_${message.guild.id}`);
 const client = new Client({                                                           //クライアントの設定
-	prefix: mainprefix,db.get(`guildprefix_${message.guild.id}`),
+	prefix: [mainprefix,guildprefix],
 	ownerID: OWNERS.split(','),                                                   //ownerIDをとってくる  例→  12345667887,123435453342
 	disableEveryone: true                                                         //botが@everyoneを使えないようにする
 });
@@ -23,7 +24,7 @@ const runLint = message => {                                                    
 		code: parsed[2],
 		lang: parsed[1] ? parsed[1].toLowerCase() : null
 	};
-	return client.commandHandler.modules.get('lint').exec(message, { code, amber: false }, true); 
+	return client.commandHandler.modules.get('lint').exec(client, message, { code, amber: false }, true); 
 	                                                                                //上記の条件を満たしたメッセージだった場合にcommandHandlerを呼び出してメッセージに対し処理を行う
 };
 
