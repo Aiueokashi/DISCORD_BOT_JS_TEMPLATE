@@ -1,4 +1,5 @@
 require('dotenv').config();
+require('discord.js');								//入れるだけ、クライアントには使ってない
 const { DISCORD_BOT_TOKEN, OWNERS } = process.env;                            //.envファイルからトークン、プレフィックス、オーナーIDをとってくる
 const Client = require('./structures/Client');                                        //discordのクライアント
 //const activities = require('./assets/json/activity');					//プレイ中の表示を変える場合、それを読み込む
