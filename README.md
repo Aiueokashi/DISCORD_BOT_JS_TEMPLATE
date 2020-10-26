@@ -62,7 +62,7 @@ config.yamlに書くもの:<br>
   
 |botオーナー用コマンド|説明|短縮|
 |---|---|---|
-|evaluate \<code>|codeの中身が実際に実行される。:warning:サーバーやプログラムに変更が加えられる:warning:(動くのは[Discord.js][djs]と[discord-akairo][akairo]書式のみ)|eval|
+|evaluate \<code>|codeの中身が実際に実行される。<br>:warning:サーバーやプログラムに変更が加えられる:warning:(動くのは[Discord.js][djs]と[discord-akairo][akairo]書式のみ)|eval|
 |execute \<code>|codeの中身を実行する(evalとは違って結果が文字、数値として返ってくるだけ)|exec|
   
   
