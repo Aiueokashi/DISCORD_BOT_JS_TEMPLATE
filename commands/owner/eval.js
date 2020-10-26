@@ -1,9 +1,7 @@
 const { Command } = require('discord-akairo');
 const { inspect } = require('util');
 const { stripIndents } = require('common-tags');
-const discord = reqire('discord.js');
 const path = require('path');
-client = new discord.Client()
 module.exports = class EvalCommand extends Command {
 	constructor() {
 		super('eval', {
@@ -15,8 +13,7 @@ module.exports = class EvalCommand extends Command {
       cooldown:2000,
 		});
 	}
-async exec(message) {
-  const prefix = process.env.AUTO_PREFIX
+async exec(client, message) {
   const args = message.content.slice(prefix.length+4).split(' ')
 		let evaled;
 		var sourceStr = message.content;
@@ -27,7 +24,7 @@ async exec(message) {
 			console.log(inspect(evaled));
 		} catch (error) {
 			console.error(error);
-			var errormsg = msg.channel.send({
+			var errormsg = message.channel.send({
 				embed: {
 					color: 0x00ae86,
 					title: ':warning:error',
