@@ -1,7 +1,7 @@
 [replit]:https://repl.it<br>
 [djs]:https://discord.js.org/#/<br>
 [akairo]:https://discord-akairo.github.io/#/
-[![Run on Repl.it](https://repl.it/badge/github/MrAugu/simple-discordjs-dashboard)](https://repl.it/github/MrAugu/simple-discordjs-dashboard)
+[![Run on Repl.it](https://repl.it/badge/github/Aiueokashi/DISCORD_BOT_JS_TEMPLATE)](https://repl.it/github/Aiueokashi/DISCORD_BOT_JS_TEMPLATE)
 ![MyBadge](https://img.shields.io/badge/まだ-制作途中-orange)
 # DISCORD_BOT_JS_TEMPLATE:warning:制作途中！！！
 ## [repl.it][replit]で動かすためのコードです！
