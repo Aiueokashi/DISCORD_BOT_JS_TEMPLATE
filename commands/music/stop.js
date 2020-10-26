@@ -4,7 +4,7 @@ const { canModifyQueue } = require(".../util/MusicUtils");
 module.exports = class StopCommand extends Command{
 	constructor() {
 		super('stop', {
-			aliases: ['stop', 'st'],
+			aliases: ['stop'],
 			category: 'music',
 			description: 'stop music playing'
 		});
