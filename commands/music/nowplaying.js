@@ -1,11 +1,15 @@
 const createBar = require("string-progressbar");
 const { MessageEmbed } = require("discord.js");
 
-module.exports = {
-  name: "nowplaying",
-  aliases:["np"],
-  description: "Show now playing song",
-  execute(message) {
+module.exports = class PlayCommand extends Command {
+	constructor() {
+		super('nowplaying', {
+			aliases: ['nowplaying', 'np'],
+			category: 'music',
+			description: 'show details of playing music'
+		});
+	} 
+  exec(message) {
     const queue = message.client.queue.get(message.guild.id);
     if (!queue) return message.reply("何も再生してないよ").catch(console.error);
     const song = queue.songs[0];
@@ -28,7 +32,7 @@ module.exports = {
       );
 
     if (song.duration > 0)
-      nowPlaying.setFooter("プレイ時間: " + new Date(left * 1000).toISOString().substr(11, 8));
+      nowPlaying.setFooter("残プレイ時間: " + new Date(left * 1000).toISOString().substr(11, 8));
 
     return message.channel.send(nowPlaying);
   }
