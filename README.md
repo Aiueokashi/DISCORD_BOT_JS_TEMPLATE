@@ -15,7 +15,9 @@ repl.itで動かすように書いてます.<br>
 日本語版InviteManager作るか...
 <br><br>
 # 機能↓
-- [x] 音楽再生<br>
+- [x] MusicPlayer
+- [ ] UtilityCommands
+- [ ] ModerationCommands
 - [ ] InviteTracker/Manager
 - [ ] LevelingSystem
 <br><br>
