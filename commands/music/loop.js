@@ -1,6 +1,6 @@
 const { canModifyQueue } = require("../util/MusicUtils");
 const { MessageEmbed } = require('discord.js')
-module.exports = class PlayCommand extends Command {
+module.exports = class LoopCommand extends Command {
 	constructor() {
 		super('loop', {
 			aliases: ['loop', 'l'],
