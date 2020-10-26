@@ -1,9 +1,14 @@
-const { canModifyQueue } = require("../util/EvobotUtil");
+const { canModifyQueue } = require("../util/MusicUtils");
 
-module.exports = {
-  name: "shuffle",
-  description: "Shuffle queue",
-  execute(message) {
+module.exports = class ShuffleCommand extends Command {
+	constructor() {
+		super('shuffle', {
+			aliases: ['shuffle'],
+			category: 'music',
+			description: 'shuffle music in queue'
+		});
+	}
+  exec(message) {
     const queue = message.client.queue.get(message.guild.id);
     if (!queue) return message.channel.send("キューがないよ").catch(console.error);
     if (!canModifyQueue(message.member)) return;
