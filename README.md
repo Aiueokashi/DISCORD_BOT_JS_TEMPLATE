@@ -20,6 +20,7 @@ repl.itで動かすように書いてます.<br>
 `.env`ファイルと`config.yaml`の中に書いてある項目を埋めれば使えます。<br><br>
 .envに必要なもの:<br>
 ①DiscordのBotToken<br>
+②オーナーの(あなたの)discordのID(2人以上の時はカンマ(,)で区切ってね)<br>
 ②YoutubeのAPI Key<br><br>
 config.yamlに書くもの:<br>
 ①デフォルトのprefix(コマンドでサーバーごとに変更可能)<br>
