@@ -1,10 +1,15 @@
 const fs = require("fs");
 const config = require("../config.json");
 
-module.exports = {
-  name: "pruning",
-  description: "Toggle pruning of bot messages",
-  execute(message) {
+module.exports = class PruningCommand extends Command {
+	constructor() {
+		super('pruning', {
+			aliases: ['pruning', 'pr'],
+			category: 'music',
+			description: 'prune own message'
+		});
+	}
+  exec(message) {
     config.PRUNING = !config.PRUNING;
 
     fs.writeFile("./config.json", JSON.stringify(config, null, 2), (err) => {
