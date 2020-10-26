@@ -1,4 +1,4 @@
-const { canModifyQueue } = require("../util/MusicbotUtil");
+const { canModifyQueue } = require("../util/MusicUtils");
 const { MessageEmbed } = require('discord.js')
 module.exports = class PlayCommand extends Command {
 	constructor() {
