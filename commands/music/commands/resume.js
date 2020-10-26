@@ -1,10 +1,14 @@
-const { canModifyQueue } = require("../util/EvobotUtil");
+const { canModifyQueue } = require("../util/MusicUtils");
 
-module.exports = {
-  name: "resume",
-  aliases: ["r"],
-  description: "Resume currently playing music",
-  execute(message) {
+module.exports = class ResumeCommand extends Command {
+	constructor() {
+		super('resume', {
+			aliases: ['resume', 'r'],
+			category: 'music',
+			description: 'resume music'
+		});
+	}
+  exec(message) {
     const queue = message.client.queue.get(message.guild.id);
     if (!queue) return message.reply("プレイしてるものがありません").catch(console.error);
     if (!canModifyQueue(message.member)) return;
