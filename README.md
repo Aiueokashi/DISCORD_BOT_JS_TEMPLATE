@@ -11,8 +11,8 @@ repl.itで動かすように書いてます.<br>
 日本語版InviteManager作るか...
 <br><br>
 # 機能↓
-1:音楽再生<br>
-2:InviteTracker/Manager(制作中)
+[x]音楽再生<br>
+[ ] InviteTracker/Manager(制作中)
 <br><br>
 
 # コマンドとか使い方とか
@@ -27,6 +27,7 @@ config.yamlに書くもの:<br>
 ②デフォルトのwelcome/leaveメッセージ(コマンドでサーバーごとに変更、オンオフ可能)<br>
 いじょー<br><br>
 ## B.コマンド
+指定した`prefix`をコマンドの前につけるか、botをメンションした後にコマンドを打つとbotが反応します。<br>
 
 
 # 不具合とかどうたらこうたら↓
