@@ -3,10 +3,15 @@ const { YOUTUBE_API_KEY } = require("../config.json");
 const YouTubeAPI = require("simple-youtube-api");
 const youtube = new YouTubeAPI(YOUTUBE_API_KEY);
 
-module.exports = {
-  name: "search",
-  description: "Search and select videos to play",
-  async execute(message, args) {
+module.exports = class SearchCommand extends Command {
+	constructor() {
+		super('search', {
+			aliases: ['search'],
+			category: 'music',
+			description: 'search music from youtube'
+		});
+	}
+  async exec(message, args) {
     if (!args.length)
       return message.reply(`コマンド: ${message.client.prefix}${module.exports.name} <Video Name>`).catch(console.error);
     if (message.channel.activeCollector)
