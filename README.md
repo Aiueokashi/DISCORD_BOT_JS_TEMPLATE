@@ -1,4 +1,4 @@
-[TOC]
+[TOC]<br>
 [replit]:https://repl.it
 # DISCORD_BOT_JS_TEMPLATE:warning:制作途中！！！
 ## [repl.it][replit]で動かすためのコードです！
