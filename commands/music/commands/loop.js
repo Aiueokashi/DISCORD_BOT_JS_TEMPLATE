@@ -1,10 +1,14 @@
-const { canModifyQueue } = require("../util/EvobotUtil");
+const { canModifyQueue } = require("../util/MusicbotUtil");
 const { MessageEmbed } = require('discord.js')
-module.exports = {
-  name: "loop",
-  aliases: ['l'],
-  description: "Toggle music loop",
-  execute(message) {
+module.exports = class PlayCommand extends Command {
+	constructor() {
+		super('loop', {
+			aliases: ['loop', 'l'],
+			category: 'music',
+			description: 'loop now playing music'
+		});
+	}
+  exec(message) {
     const queue = message.client.queue.get(message.guild.id);
     if (!queue) return message.reply("何も再生してないよ").catch(console.error);
     if (!canModifyQueue(message.member)) return;
