@@ -12,7 +12,8 @@ repl.itで動かすように書いてます.<br>
 <br><br>
 # 機能↓
 - [x] 音楽再生<br>
-- [ ] InviteTracker/Manager(制作中)
+- [ ] InviteTracker/Manager
+- [ ] LevelingSystem
 <br><br>
 
 # コマンドとか使い方とか
