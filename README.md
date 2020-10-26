@@ -17,7 +17,7 @@ repl.itで動かすように書いてます.<br>
 
 # コマンドとか使い方とか
 
-.envファイルとconfig.yamlの中に書いてある項目を埋めれば使えます。<br><br>
+`.env`ファイルと`config.yaml`の中に書いてある項目を埋めれば使えます。<br><br>
 .envに必要なもの:<br>
 ①DiscordのBotToken<br>
 ②YoutubeのAPI Key<br><br>
