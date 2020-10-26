@@ -1,4 +1,6 @@
+[replit]:https://repl.it
 # DISCORD_BOT_JS_TEMPLATE:warning:制作途中！！！
+## [repl.it][replit]で動かすためのコードです！
 discord-akairoでbotを書こうかなと<br>
 気ままに書くので何を追加するかもよくわからない🤪<br>
 repl.itで動かすように書いてます.<br>
