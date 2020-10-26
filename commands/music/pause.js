@@ -3,7 +3,7 @@ const { canModifyQueue } = require("../util/MusicUtils");
 module.exports = class PlayCommand extends Command {
 	constructor() {
 		super('pause', {
-			aliases: ['pause', 'p'],
+			aliases: ['pause', 'pa'],
 			category: 'music',
 			description: 'pause music'
 		});
