@@ -61,7 +61,11 @@ config.yamlに書くもの:<br>
 |nowplaying|再生中の曲の詳細を表示|np|
 |remove \<value>|指定したキューの番号の曲をキューから外す|なし|
 |resume|pauseで止めた再生を再開|r|
-|他にもあるんだけど|ちょっと今日はここまで|...|
+
+|サーバーオーナー用コマンド|説明|短縮|
+|---|---|---|
+|config prefix|サーバーのprefixを表示|c prefix|
+|config prefix \<value>|指定したprefixに変更(サーバー内のみ)|c prefix \<value>|
   
 |botオーナー用コマンド|説明|短縮|
 |---|---|---|
