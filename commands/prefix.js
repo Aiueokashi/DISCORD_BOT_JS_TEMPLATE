@@ -1,4 +1,4 @@
-const { Command } = reqiure('discord-akairo');
+const { Command } = require('discord-akairo');
 module.exports = class PrefixCommand extends Command {
 	constructor() {
 		super('setprefix', {
@@ -57,3 +57,6 @@ if (prefix === null) prefix = mainprefix;
         db.set(`guildprefix_${message.guild.id}`, newprefix);
         return message.channel.send(changedprefix);
       }
+    }
+}
+}
