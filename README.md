@@ -6,7 +6,7 @@
 ![MyBadge2](https://img.shields.io/badge/Under-Constructing-yellow)
 # DISCORD_BOT_JS_TEMPLATE:warning:制作途中！！！
 ## [repl.it][replit]で動かすためのコードです！
-## なんかreplの不具合かわからんけどCloneが使えないのでZip推奨
+## 追記::warning:なんかreplの不具合かわからんけどCloneが使えないのでZip推奨
 discord-akairoでbotを書こうかなと<br>
 気ままに書くので何を追加するかもよくわからない🤪<br>
 repl.itで動かすように書いてます.<br>
