@@ -19,6 +19,7 @@ repl.itで動かすように書いてます.<br>
 <br><br>
 # 機能↓
 - [x] MusicPlayer
+- [x] ChangePrefixEachServers
 - [ ] ReactionMusicPlayer
 - [ ] UtilityCommands
 - [ ] ModerationCommands
