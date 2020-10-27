@@ -1,5 +1,5 @@
 const { MessageEmbed, splitMessage, escapeMarkdown } = require("discord.js");
-
+const { Command } = require('discord-akairo');
 module.exports = class QueueCommand extends Command {
 	constructor() {
 		super('queue', {

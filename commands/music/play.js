@@ -2,7 +2,7 @@ const { YOUTUBE_API_KEY } = process.env;
 const ytdl = require("ytdl-core");
 const YouTubeAPI = require("simple-youtube-api");
 const youtube = new YouTubeAPI(YOUTUBE_API_KEY);
-
+const { Command } = require('discord-akairo');
 module.exports = class PlayCommand extends Command {
 	constructor() {
 		super('play', {

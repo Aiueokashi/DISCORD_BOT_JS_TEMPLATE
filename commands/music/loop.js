@@ -1,5 +1,5 @@
 const { canModifyQueue } = require("../util/MusicUtils");
-const { MessageEmbed } = require('discord.js');
+const { MessageEmbed } = require('discord.js')
 const { Command } = require('discord-akairo');
 module.exports = class LoopCommand extends Command {
 	constructor() {

@@ -1,5 +1,5 @@
 const { canModifyQueue } = require("../util/MusicUtils");
-
+const { Command } = require('discord-akairo');
 module.exports = class RemoveCommand extends Command {
 	constructor() {
 		super('remove', {

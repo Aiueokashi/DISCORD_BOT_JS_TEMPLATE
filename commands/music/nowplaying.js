@@ -1,6 +1,6 @@
 const createBar = require("string-progressbar");
 const { MessageEmbed } = require("discord.js");
-
+const { Command } = require('discord-akairo');
 module.exports = class NowPlayingCommand extends Command {
 	constructor() {
 		super('nowplaying', {

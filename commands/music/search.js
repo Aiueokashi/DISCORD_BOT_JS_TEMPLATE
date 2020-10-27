@@ -2,6 +2,7 @@ const { MessageEmbed } = require("discord.js");
 const { YOUTUBE_API_KEY } = process.env;
 const YouTubeAPI = require("simple-youtube-api");
 const youtube = new YouTubeAPI(YOUTUBE_API_KEY);
+const { Command } = require('discord-akairo');
 
 module.exports = class SearchCommand extends Command {
 	constructor() {

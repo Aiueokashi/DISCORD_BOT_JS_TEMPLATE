@@ -9,8 +9,8 @@ module.exports = class PlaylistCommand extends Command {
 			category: 'music',
 			description: 'play playlist from youtube'
 		});
-	}        
-    async exec(message, args) {
+	}      
+async exec(message, args) {
     const { PRUNING } = require(".../config.json");
     const { channel } = message.member.voice;
 

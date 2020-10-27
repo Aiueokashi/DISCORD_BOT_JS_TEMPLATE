@@ -1,5 +1,5 @@
-const { canModifyQueue } = require("../util/MusicUtills");
-
+const { canModifyQueue } = require("../util/MusicUtils");
+const { Command } = require('discord-akairo');
 module.exports = class VolumeCommand extends Command {
 	constructor() {
 		super('volume', {

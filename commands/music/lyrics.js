@@ -9,7 +9,7 @@ module.exports = class LyricsCommand extends Command {
 			description: 'search lyrics from youtube'
 		});
 	}
-  async exec(message) {
+async exec(message) {
     const queue = message.client.queue.get(message.guild.id);
     if (!queue) return message.channel.send("何も再生してないよ").catch(console.error);
 
