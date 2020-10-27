@@ -5,6 +5,7 @@
 ![MyBadge](https://img.shields.io/badge/まだ-制作途中-orange)
 # DISCORD_BOT_JS_TEMPLATE:warning:制作途中！！！
 ## [repl.it][replit]で動かすためのコードです！
+## なんかreplの不具合かわからんけどCloneが使えないのでZipで
 discord-akairoでbotを書こうかなと<br>
 気ままに書くので何を追加するかもよくわからない🤪<br>
 repl.itで動かすように書いてます.<br>
