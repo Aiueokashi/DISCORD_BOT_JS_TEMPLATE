@@ -1,0 +1,4 @@
+language: javascript
+rvm:
+ - 12
+ - node
