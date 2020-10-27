@@ -1,6 +1,7 @@
 const { Command } = require('discord-akairo');
 const { OWNERS } = process.env
 const owners = OWNERS
+const db = require('quick.db');	
 module.exports = class PrefixCommand extends Command {
 	constructor() {
 		super('config', {
