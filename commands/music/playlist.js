@@ -1,7 +1,7 @@
 const { YOUTUBE_API_KEY, MAX_PLAYLIST_SIZE } = process.env;
 const YouTubeAPI = require("simple-youtube-api");
 const youtube = new YouTubeAPI(YOUTUBE_API_KEY);
-
+const { Command } = require('discord-akairo');
 module.exports = class PlaylistCommand extends Command {
 	constructor() {
 		super('playlist', {
@@ -9,7 +9,7 @@ module.exports = class PlaylistCommand extends Command {
 			category: 'music',
 			description: 'play playlist from youtube'
 		});
-        
+	}        
     async exec(message, args) {
     const { PRUNING } = require(".../config.json");
     const { channel } = message.member.voice;
