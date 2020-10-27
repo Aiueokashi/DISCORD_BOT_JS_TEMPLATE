@@ -19,7 +19,7 @@ repl.itで動かすように書いてます.<br>
 日本語版InviteManager作るか...
 <br><br>
 # 機能↓
-- [x] MusicPlayer
+~~- [x] MusicPlayer~~
 - [x] ChangePrefixEachServers
 - [ ] ReactionMusicPlayer
 - [ ] UtilityCommands
