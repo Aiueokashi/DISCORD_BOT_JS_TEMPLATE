@@ -1,18 +1,25 @@
 require('dotenv').config();
-require('discord.js');								//入れるだけ、クライアントには使ってない
-const { DISCORD_BOT_TOKEN, OWNERS } = process.env;                            //.envファイルからトークン、プレフィックス、オーナーIDをとってくる
-const Client = require('./structures/Client');                                        //discordのクライアント
-//const activities = require('./assets/json/activity');					//プレイ中の表示を変える場合、それを読み込む
+require('winston')
+require('quick.db')
+require('js-yaml')
+require('discord.js')
+require('discord-akairo')
+require('common-tags')
+require('path')
+const { DISCORD_BOT_TOKEN, OWNERS } = process.env;                            //.envファイルからトークン、オーナーIDをとってくる
 const fs = require('fs');								//fsというyaml書き込みのためのパッケージ
-const db = require('quick.db');								//replでも動くデーターベースのパッケージ
+const db = require('quick.db');								//replでも簡単に動くデーターベースのパッケージ
 const yaml = require("js-yaml");							//.yamlファイルを使えるようにする(デフォルト値設定のため)
 const { mainprefix } = yaml.load(fs.readFileSync("./config.yml"));			//デフォルトのprefixを指定
-const guildprefix = db.get(`guildprefix_${message.guild.id}`);
+const guildprefix = message => db.get(`guildprefix_${message.guild.id}`);
+const Client = require('./structures/Client');                                        //discordのクライアント
 const client = new Client({                                                           //クライアントの設定
 	prefix: [mainprefix,guildprefix],
 	ownerID: OWNERS.split(','),                                                   //ownerIDをとってくる  例→  12345667887,123435453342
 	disableEveryone: true                                                         //botが@everyoneを使えないようにする
 });
+//const activities = require('./assets/json/activity');					//プレイ中の表示を変える場合、それを読み込む
+
 const codeblock = /```(?:(\S+)\n)?\s*([^]+?)\s*```/i;                                  //コードブロックの書式読み込み
 const { stripIndents } = require('common-tags');
 const runLint = message => {                                                           //コマンドを使用するための設定
@@ -31,6 +38,7 @@ const runLint = message => {                                                    
 client.setup();//setup
 
 client.on('ready', () => {								//ログインしたときのイベント
+const { guildInvites }= require('discord.js')
 	console.log(` Logged in ${client.user.tag} ID: ${client.user.id}`);
 	/*client.setInterval(() => {							//プレイ中の表示を変えたい場合これを使う
 		const activity = activities[Math.floor(Math.random() * activities.length)];
