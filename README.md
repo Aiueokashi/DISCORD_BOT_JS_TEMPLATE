@@ -1,5 +1,5 @@
 [replit]:https://repl.it<br>
-[djs]:https://discord.js.org/#/<br>
+[djs]:https://discord.js.org/#/docs/main/stable/general/welcome<br>
 [akairo]:https://discord-akairo.github.io/#/
 [![Run on Repl.it](https://repl.it/badge/github/Aiueokashi/DISCORD_BOT_JS_TEMPLATE)](https://repl.it/github/Aiueokashi/DISCORD_BOT_JS_TEMPLATE)
 ![MyBadge](https://img.shields.io/badge/まだ-制作途中-orange)
