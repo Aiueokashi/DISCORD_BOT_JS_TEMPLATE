@@ -15,7 +15,7 @@ if (prefix === null) prefix = mainprefix;
         let args = message.content.split(' ');
       if (!message.member.hasPermission("MANAGE_GUILD")&&!owners.includes(message.author.id))
         return message.channel.send(
-          "You need `MANAGE GUILD` to configure the server settings!"
+          "MANAGE_GUILD premissionが必要です"
         );
       let content = args[1];
       if (!content) {
@@ -34,9 +34,9 @@ if (prefix === null) prefix = mainprefix;
              .setColor(`RANDOM`)
           .setTitle(`**SetPrefix**`)
           .setDescription(
-            `This Config is Currently Set.
-        Use \`\`\`${prefix}config prefix <value>\`\`\` to change it.
-        **Current Value**
+            `使い方:
+         \`\`\`${prefix}config prefix <value>\`\`\` 
+        **現在のprefix**
         \`\`\`${prefix}\`\`\`
         `
           )
@@ -50,7 +50,7 @@ if (prefix === null) prefix = mainprefix;
           .setTitle(`**Prefix Updated**`)
                .setColor(`RANDOM`)
           .setDescription(
-            `** Old Value **\n${prefix}\n** New Value **\n${newprefix}`
+            `** 前のprefix **\n${prefix}\n** 今のprefix **\n${newprefix}`
           )
           .setFooter(message.guild.name, client.user.displayAvatarURL());
         db.delete(`guildprefix_${message.guild.id}`);
