@@ -1,8 +1,10 @@
 const { Command } = require('discord-akairo');
+const { OWNERS } = process.env
+const owners = OWNERS
 module.exports = class PrefixCommand extends Command {
 	constructor() {
-		super('setprefix', {
-			aliases: ['sp','prefix','setprefix'],
+		super('config', {
+			aliases: ['config','c'],
 			category: 'admin',
 			description: 'Set bot prefix',
       ownerOnly: true,
@@ -11,7 +13,7 @@ module.exports = class PrefixCommand extends Command {
 	}
 exec(message){
 if (prefix === null) prefix = mainprefix;
-    if(message.content.startsWith(prefix + 'config')) {
+    if(message.content.startsWith(prefix + 'config')||message.content.startsWith(prefix + 'c')) {
         let args = message.content.split(' ');
       if (!message.member.hasPermission("MANAGE_GUILD")&&!owners.includes(message.author.id))
         return message.channel.send(
