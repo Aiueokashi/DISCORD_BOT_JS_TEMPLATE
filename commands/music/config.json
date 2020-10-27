@@ -1,1 +1,4 @@
-{}
+{
+  "MAX_PLAYLIST_SIZE": 20,
+  "PRUNING": true,
+}
