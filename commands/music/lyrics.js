@@ -1,6 +1,6 @@
 const { MessageEmbed } = require("discord.js");
 const lyricsFinder = require("lyrics-finder");
-
+const { Command } = require('discord-akairo');
 module.exports = class LyricsCommand extends Command {
 	constructor() {
 		super('lyrics', {
