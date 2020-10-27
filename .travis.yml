@@ -2,3 +2,4 @@ language: javascript
 rvm:
  - 12.9
  - node
+install: skip
