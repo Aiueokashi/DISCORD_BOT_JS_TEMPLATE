@@ -5,7 +5,7 @@
 ![MyBadge](https://img.shields.io/badge/まだ-制作途中-orange)
 ![MyBadge2](https://img.shields.io/badge/Under-Constructing-yellow)
 # DISCORD_BOT_JS_TEMPLATE:warning:youtube-dl系のやつが削除されて使えなくなった.
-## ~~[repl.it][replit]で動かすためのコードです！
+## [repl.it][replit]で動かすためのコードです！
 ## 追記::warning:なんかreplの不具合かわからんけどCloneが使えないのでZip推奨
 discord-akairoでbotを書こうかなと<br>
 気ままに書くので何を追加するかもよくわからない🤪<br>
@@ -20,15 +20,15 @@ repl.itで動かすように書いてます.<br>
 <br><br>
 # 機能↓
 - [x] MusicPlayer(youtubeの規制)~~
-- [x] ~~ChangePrefixEachServers
-- [ ] ~~ReactionMusicPlayer
-- [ ] ~~UtilityCommands
-- [ ] ~~ModerationCommands
-- [ ] ~~InviteTracker/Manager
-- [ ] ~~LevelingSystem
+- [x] ChangePrefixEachServers
+- [ ] ReactionMusicPlayer
+- [ ] UtilityCommands
+- [ ] ModerationCommands
+- [ ] InviteTracker/Manager
+- [ ] LevelingSystem
 <br><br>
 
-# ~~コマンドとか使い方とか
+# コマンドとか使い方とか
 ## A.使い方
 `.env`ファイルと`config.yaml`の中に書いてある項目を埋めれば使えます。<br><br>
 .envに必要なもの:<br>
@@ -63,20 +63,20 @@ config.yamlに書くもの:<br>
 |remove \<value>|指定したキューの番号の曲をキューから外す|なし|
 |resume|pauseで止めた再生を再開|r|
 
-~~|サーバーオーナー用コマンド|説明|短縮|
+|サーバーオーナー用コマンド|説明|短縮|
 |---|---|---|
 |config prefix|サーバーのprefixを表示|c prefix|
 |config prefix \<value>|指定したprefixに変更(サーバー内のみ)|c prefix \<value>|
   
-~~|botオーナー用コマンド|説明|短縮|
+|botオーナー用コマンド|説明|短縮|
 |---|---|---|
 |evaluate \<code>|codeの中身が実際に実行される。<br>:warning:サーバーやプログラムに変更が加えられる:warning:<br>(動くのは[Discord.js][djs]と[discord-akairo][akairo]書式のみ)|eval|
 |execute \<code>|codeの中身を実行する(evalとは違って結果が文字、数値として返ってくるだけ)|exec|
   
   
-### ~~READMEって書くのめんどくさいね...楽しいけど
+### READMEって書くのめんどくさいね...楽しいけど
 
-# ~~不具合とかどうたらこうたら↓
+# 不具合とかどうたらこうたら↓
 ちょっと待っててね..<br>あ、そうそう、作りかけのコードが挟まってることが多いので注意！
 
 
