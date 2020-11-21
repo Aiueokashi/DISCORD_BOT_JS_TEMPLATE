@@ -18,7 +18,7 @@ repl.itで動かすように書いてます.<br>
 日本語版InviteManager作るか...
 <br><br>
 # 機能↓
-- [x] MusicPlayer(youtubeの規制)~~
+- [x] ~~MusicPlayer(youtubeの規制)~~
 - [x] ChangePrefixEachServers
 - [ ] ReactionMusicPlayer
 - [ ] UtilityCommands
