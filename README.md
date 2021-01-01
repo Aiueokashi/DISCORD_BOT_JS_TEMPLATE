@@ -4,7 +4,7 @@
 [![Run on Repl.it](https://repl.it/badge/github/Aiueokashi/DISCORD_BOT_JS_TEMPLATE)](https://repl.it/github/Aiueokashi/DISCORD_BOT_JS_TEMPLATE)
 ![MyBadge](https://img.shields.io/badge/まだ-制作途中-orange)
 ![MyBadge2](https://img.shields.io/badge/Under-Constructing-yellow)
-# DISCORD_BOT_JS_TEMPLATE:warning:youtube-dl系のやつが削除されて使えなくなった.
+# DISCORD_BOT_JS_TEMPLATE:warning:パッケージ更新で使えなくなった.
 ## [repl.it][replit]で動かすためのコードです！
 discord-akairoでbotを書こうかなと<br>
 気ままに書くので何を追加するかもよくわからない🤪<br>
